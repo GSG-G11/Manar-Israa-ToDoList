@@ -6,20 +6,18 @@ function Form(props) {
     <div className="form-parant">
       <nav className="nav">
         <form className="form">
-          {/* <span className="filter-by">Filter By:</span> */}
           <select
             className="priority-select"
             name="priorityFilter"
             value={priorityFilter}
             onChange={handelChange}
-            placeholder="Filter by Priority"
           >
+            <option value=" " disabled >Filter by priority</option>
             <option value="all">all</option>
             <option value="high">high Priority</option>
             <option value="medium">medium Priority</option>
             <option value="low">low Priority</option>
           </select>
-
           <select
             name="CompleteFilter"
             className="priority-select"
@@ -27,6 +25,7 @@ function Form(props) {
             onChange={handelChange}
             placeholder="Filter by Status"
           >
+            <option value=" " disabled >Filter by Status</option>
             <option value="all">all</option>
             <option value={true}>Done</option>
             <option value={false}>In progress</option>

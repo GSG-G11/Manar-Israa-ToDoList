@@ -94,7 +94,7 @@ h2.text-center-head {
   border-color: #007bff;
 }
 .priority-select {
-  width: 32%;
+  width: 25%;
   margin-left: 1%;
   height: calc(1.5em + 0.75rem + 2px);
   padding: 0.375rem 0.75rem;
@@ -182,9 +182,14 @@ tr {
 }
 .bx-trash-alt {
   color: #f5a60b;
+  font-size: 1.2em;
 }
 .bx-check {
-  color: #00b74a;
+  color: #1b753f;
+  font-size: 1.2em;
+}
+.btn-Check {
+  font-size: 1.2em;
 }
 .low {
   padding: 0.5em 1.6em;
