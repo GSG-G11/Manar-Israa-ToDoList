@@ -1,18 +1,21 @@
-function AddTask({
-  displayPop,
-  Changedisplay,
+import React from "react";
+
+function UpdateTask({
+  displayPopUpdate,
+  CloseUpdate,
   handelChange,
+  id,
   title,
   teamMamber,
   priority,
-  addTask,
+  updateTask,
   error,
 }) {
   return (
-    displayPop && (
+    displayPopUpdate && (
       <div className="add-component">
         <form>
-          <h1>Add Task ✍️</h1>
+          <h1>Update Task ✍️</h1>
           <input
             type="text"
             placeholder="Enter Task Title"
@@ -27,6 +30,13 @@ function AddTask({
             value={teamMamber}
             onChange={handelChange}
           />
+          <input
+            type="hidden"
+            placeholder="Enter Member Name"
+            name="id"
+            value={id}
+            onChange={handelChange}
+          />
 
           <select value={priority} onChange={handelChange} name="priority">
             <option value="high">high Priority</option>
@@ -36,16 +46,16 @@ function AddTask({
           <span className="error">{error}</span>
           <div className="btn-popup">
             <button
-              type="submit"
+              type="click"
               className="submit"
-              onClick={(e) => addTask(e)}
+              onClick={(e) => updateTask(e)}
             >
-              save
+              Update
             </button>
             <button
               type="button"
               className="btn-outline-danger"
-              onClick={() => Changedisplay()}
+              onClick={() => CloseUpdate()}
             >
               close
             </button>
@@ -55,4 +65,5 @@ function AddTask({
     )
   );
 }
-export default AddTask;
+
+export default UpdateTask;
