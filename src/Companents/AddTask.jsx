@@ -1,9 +1,9 @@
-import React from 'react';
-
 function AddTask({displayPop , Changedisplay, handelChange, title, teamMamber, priority, addTask}) {
     return (
-        displayPop && (<div>
+        displayPop && (<div className="add-component">
+            
             <form >
+            <h1>Add Task ✍️</h1>
                 <input type="text" placeholder="Enter Task Title" name="title" value={title} onChange={handelChange}/>
                 <input type="text" placeholder="Enter Member Name" name="teamMamber" value={teamMamber} onChange={handelChange}/>
 
@@ -12,11 +12,13 @@ function AddTask({displayPop , Changedisplay, handelChange, title, teamMamber, p
                     <option value="medium">medium Priority</option>
                     <option value="low">low Priority</option>
                 </select>
-                <button type="submit" onClick={(e)=>addTask(e)}>save</button>
-                <button type="button" onClick={() => Changedisplay()}>close</button>
+                <div className="btn-popup">
+                <button type="submit" className="submit" onClick={(e)=>addTask(e)}>save</button>
+                <button type="button" className="btn-outline-danger" onClick={() => Changedisplay()}>close</button>
+                </div>
+
             </form>
         </div>)
     );
 }
-
-export default AddTask;
+export default AddTask

@@ -1,23 +1,32 @@
 import React from 'react';
 
 function Form(props) {
-    const {priorityFilter, handelChange, Changedisplay} = props;
+    const {priorityFilter, handelChange, Changedisplay, CompleteFilter} = props;
+    console.log (typeof CompleteFilter, CompleteFilter)
     return (
-        <div>
+        <div className="form-parant">
             <nav className="nav">
                 <form className="form">
-                    <select name="priorityFilter" value={priorityFilter} onChange={handelChange}>
+                    {/* <span className="filter-by">Filter By:</span> */}
+                    <select className="priority-select" name="priorityFilter" value={priorityFilter} onChange={handelChange} placeholder="Filter by Priority">
                         <option value="all">all</option>
                         <option value="high">high Priority</option>
                         <option value="meduim">medium Priority</option>
                         <option value="low">low Priority</option>
                     </select>
 
+                    <select name="CompleteFilter" className="priority-select" value={CompleteFilter} onChange={handelChange} placeholder="Filter by Status">
+                    <option value="all">all</option>
+                    <option value={true} >Done</option>
+                    <option value={false} >In progress</option>
+                    </select>
                 </form>
                 <button className="btn btn-primary" onClick={() => Changedisplay()} > Add</button>
             </nav>
         </div>
     );
 }
+
+
 
 export default Form;
