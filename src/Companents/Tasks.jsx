@@ -1,6 +1,6 @@
 import Task from './Task';
 
-function Tasks( {tasks} ) {
+function Tasks( {tasks,deleteTask,checkTask} ) {
     return (
         <div>
             <table className ='task-tab'>
@@ -13,7 +13,7 @@ function Tasks( {tasks} ) {
                     </tr>
                 </thead>
                 <tbody>   
-                   {tasks.length ?  tasks.map(task =><Task key={task.id} task={task} /> ) : <td>There are no tasks</td>}
+                   {tasks.length ?  tasks.map(task =><Task key={task.id} task={task} deleteTask={deleteTask} checkTask={checkTask} /> ) : <td>There are no tasks</td>}
                 </tbody>
             </table>
         </div>
