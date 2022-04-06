@@ -5,14 +5,14 @@
 
 <br />
 <div align="center">
-  <a href="https://deploy-preview-12--superb-sable-479a90.netlify.app/">
-    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp" alt="Logo" width="50" height="50">
+  <a href="https://todo-manar-israa.netlify.app/">
+    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp" alt="Logo" width="60" height="50">
   </a>
   <h2>Task Manager</h2>
 </div>
 
 ## links
-[live link](https://deploy-preview-12--superb-sable-479a90.netlify.app/)
+[live link](https://todo-manar-israa.netlify.app/)
 
 ## User Stories 
 - As a user you can enter the task in the input filed .
