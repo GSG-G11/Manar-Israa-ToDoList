@@ -8,7 +8,7 @@
   <a href="https://todo-manar-israa.netlify.app/">
     <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp" alt="Logo" width="60" height="50">
   </a>
-  <h2>Task Manager</h2>
+  <h3>Task Manager</h3>
 </div>
 
 ## links

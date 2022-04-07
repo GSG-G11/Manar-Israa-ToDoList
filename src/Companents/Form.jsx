@@ -33,7 +33,7 @@ function Form(props) {
         </form>
         <button className="btn btn-primary" onClick={() => Changedisplay()}>
           {" "}
-          Add
+          <i class="bx bx-plus"></i>  Add
         </button>
       </nav>
     </div>
