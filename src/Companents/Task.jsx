@@ -3,7 +3,7 @@ function Task(props) {
     task: { id, title, teamMamber, priority, done },
     deleteTask,
     checkTask,
-    ChangedisplayForUpdate,
+    updateTask,
   } = props;
 
   return (
@@ -43,7 +43,7 @@ function Task(props) {
         <button
           className="btn btn-Check action "
           onClick={() =>
-            ChangedisplayForUpdate(id, title, teamMamber, priority)
+            updateTask(id)
           }
         >
           <i class='bx bx-pencil' ></i>

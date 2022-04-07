@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from "uuid";
 import Tasks from "./Companents/Tasks";
 import Form from "./Companents/Form";
 import AddTask from "./Companents/AddTask";
-import UpdateTask from "./Companents/UpdateTask";
 
 class App extends Component {
   state = {
@@ -30,8 +29,6 @@ class App extends Component {
     priorityFilter: "all",
     CompleteFilter: "all",
     displayPop: false,
-    displayPopUpdate: false,
-    id: "",
     error: "",
     days: [
       "Sunday",
@@ -42,6 +39,7 @@ class App extends Component {
       "Friday",
       "Saturday",
     ],
+    isEditing:false,
   };
 
   handelChange = ({ target }) => {
@@ -75,6 +73,7 @@ class App extends Component {
           teamMamber: "",
           priority: "",
           error: "",
+          isEditing:false,
         };
       });
     }
@@ -105,45 +104,23 @@ class App extends Component {
   CloseUpdate = () => {
     return this.setState({ displayPopUpdate: !this.state.displayPopUpdate });
   };
-  updateTask = (e) => {
-    e.preventDefault();
+  updateTask = (id) => {
 
-    if (!this.state.title.trim()) {
-      this.setState({ error: "can't be empty" });
-    } else if (!this.state.teamMamber.trim()) {
-      this.setState({ error: "can't be empty" });
-    } else {
-      this.CloseUpdate();
-      return this.setState({
-        tasks: this.state.tasks.map((task) => {
-          if (task.id === this.state.id) {
-            return {
-              ...task,
-              title: this.state.title,
-              teamMamber: this.state.teamMamber,
-              priority: this.state.priority,
-            };
-          }
-          return task;
-        }),
-        title: "",
-        teamMamber: "",
-        priority: "low",
-        erro: "",
-      });
-    }
-  };
-
-  ChangedisplayForUpdate = (id, title, teamMamber, priority) => {
-    this.CloseUpdate();
-    this.setState({
-      title: title,
-      teamMamber: teamMamber,
-      priority: priority,
-      id: id,
-    });
-  };
-
+    const taskUpdate = this.state.tasks.filter((task)=>{
+      return task.id !==id
+    })
+    const taskedit = this.state.tasks.find((task)=>{
+      return task.id === id
+    })
+  this.setState({
+    tasks:taskUpdate,
+    title:taskedit.title,
+    teamMamber:taskedit.teamMamber,
+    priority:taskedit.priority,
+    isEditing:true,
+  })
+  this.Changedisplay()
+  }
   render() {
     const {
       tasks,
@@ -154,9 +131,8 @@ class App extends Component {
       priority,
       CompleteFilter,
       days,
-      displayPopUpdate,
-      id,
       error,
+      isEditing,
     } = this.state;
     return (
       <div>
@@ -182,17 +158,7 @@ class App extends Component {
             teamMamber={teamMamber}
             priority={priority}
             addTask={this.addTask}
-          />
-          <UpdateTask
-            error={error}
-            displayPopUpdate={displayPopUpdate}
-            CloseUpdate={this.CloseUpdate}
-            handelChange={this.handelChange}
-            id={id}
-            title={title}
-            teamMamber={teamMamber}
-            priority={priority}
-            updateTask={this.updateTask}
+            isEditing={isEditing}
           />
           <Tasks
             tasks={tasks}
@@ -201,6 +167,7 @@ class App extends Component {
             priorityFilter={priorityFilter}
             CompleteFilter={CompleteFilter}
             ChangedisplayForUpdate={this.ChangedisplayForUpdate}
+            updateTask={this.updateTask}
           />
         </div>
 
