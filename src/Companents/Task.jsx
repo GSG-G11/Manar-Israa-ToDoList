@@ -46,7 +46,7 @@ function Task(props) {
             ChangedisplayForUpdate(id, title, teamMamber, priority)
           }
         >
-          <i className="bx bx-edit"></i>
+          <i class='bx bx-pencil' ></i>
         </button>
       </td>
     </tr>
