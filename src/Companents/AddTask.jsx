@@ -7,6 +7,7 @@ function AddTask({
   priority,
   addTask,
   error,
+  isEditing,
 }) {
   return (
     displayPop && (
@@ -40,7 +41,7 @@ function AddTask({
               className="submit"
               onClick={(e) => addTask(e)}
             >
-              save
+              {isEditing?'Update':'Add'}
             </button>
             <button
               type="button"

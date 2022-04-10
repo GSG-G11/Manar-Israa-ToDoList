@@ -6,7 +6,7 @@ function Tasks({
   checkTask,
   priorityFilter,
   CompleteFilter,
-  ChangedisplayForUpdate,
+  updateTask,
 }) {
   const Filterarry = tasks.filter((task) => {
     if (priorityFilter !== "all" && CompleteFilter === "all") {
@@ -39,10 +39,10 @@ function Tasks({
             Filterarry.map((task) => (
               <Task
                 key={task.id}
-                ChangedisplayForUpdate={ChangedisplayForUpdate}
                 task={task}
                 deleteTask={deleteTask}
                 checkTask={checkTask}
+                updateTask={updateTask}
               />
             ))
           ) : (

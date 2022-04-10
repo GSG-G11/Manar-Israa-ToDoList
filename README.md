@@ -1,7 +1,7 @@
 # Task Manager App
 
 ## Description
-- It is ToDo Applicatoin that will help you to organize your Tasks.
+- It is ToDo Application that will help distributor to organize member Tasks.
 
 <br />
 <div align="center">
@@ -15,7 +15,8 @@
 [live link](https://todo-manar-israa.netlify.app/)
 
 ## User Stories 
-- As a user you can enter the task in the input filed .
+- As a user you can show all tasks .
+- As a user you can enter the task and name member in the input filed .
 - As a user you can click on Add button to Add  the task .
 - As a user you can click on delete icon to delete the task .
 - As a user you can click on edit icon to edit the task .
